@@ -1,3 +1,7 @@
 import { combineReducers } from "redux";
-
-export default combineReducers({});
+import filteredStories from "./filteredStories";
+import stories from './stories';
+export default combineReducers({
+  filteredStories,
+  stories
+});
