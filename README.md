@@ -10,3 +10,11 @@ The main goal of this project is to use typescript to build react.js apps. This 
 - To avoid problems defining the actions the project uses `typesafe-actions`.
 
 As said before, the main goal of this project is to use typescript in react apps by building a simple app.
+
+## Some imagens
+
+List of stories:
+![list of stories](docs/stories.png)
+
+Story details:
+![details](docs/detail.png)

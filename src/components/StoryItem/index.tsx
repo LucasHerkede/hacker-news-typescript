@@ -44,7 +44,7 @@ class StoryItem extends Component<Props> {
         <Typography style={{ padding: "10px" }}>
           <Title level={3}>{item.title}</Title>
           <Paragraph>
-            posted at {item.time_ago} with {item.comments_count} comments
+            posted {item.time_ago} with {item.comments_count} comments
           </Paragraph>
         </Typography>
         <CommentList comments={comments} />
