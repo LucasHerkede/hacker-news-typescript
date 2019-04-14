@@ -13,8 +13,10 @@ As said before, the main goal of this project is to use typescript in react apps
 
 ## Some imagens
 
-List of stories:
+- List of stories:
+
 ![list of stories](docs/stories.png)
 
-Story details:
+- Story details:
+
 ![details](docs/detail.png)
