@@ -14,7 +14,7 @@ const reducer: Reducer<FilteredStoryState> = (
 ) => {
   switch (action.type) {
     case FilteredStoriesTypes.LOAD_REQUEST:
-      return { ...state, loading: true, page: action.payload };
+      return { ...state, loading: true, page: action.payload.page };
     case FilteredStoriesTypes.LOAD_SUCCESS:
       return {
         ...state,

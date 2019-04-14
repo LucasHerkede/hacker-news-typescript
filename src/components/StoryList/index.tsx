@@ -7,6 +7,7 @@ import { connect } from "react-redux";
 import { Story } from "../../models";
 import styles from "./StoryList.module.css";
 import { Link } from "react-router-dom";
+import StoriesPage from "./StoriesPage";
 
 interface StateProps {
   stories: Story[];
@@ -41,38 +42,48 @@ class StoryList extends Component<Props> {
   render() {
     const { stories } = this.props;
     return (
-      <List<Story>
-        dataSource={stories}
-        bordered
-        itemLayout="vertical"
-        renderItem={item => (
-          <List.Item
-            key={item.id}
-            actions={[
-              <IconText
-                text={item.comments_count.toString()}
-                icon="file-text"
-                type="comments"
-              />,
-              <IconText
-                text={item.points ? item.points.toString() : "0"}
-                icon="like"
-                type="points"
+      <div>
+        <List<Story>
+          dataSource={stories}
+          bordered
+          itemLayout="vertical"
+          renderItem={item => (
+            <List.Item
+              key={item.id}
+              actions={[
+                <IconText
+                  text={item.comments_count.toString()}
+                  icon="file-text"
+                  type="comments"
+                />,
+                <IconText
+                  text={item.points ? item.points.toString() : "0"}
+                  icon="like"
+                  type="points"
+                />
+              ]}
+            >
+              <List.Item.Meta
+                className={styles.title_list}
+                title={
+                  <Link
+                    to={{
+                      pathname: `/story/${item.id}`,
+                      state: { story: item }
+                    }}
+                  >
+                    {item.title}
+                  </Link>
+                }
               />
-            ]}
-          >
-            <List.Item.Meta
-              className={styles.title_list}
-              title={
-                <Link to={{ pathname: `/story/${item.id}`, state: { story: item} }}>{item.title}</Link>
-              }
-            />
-            <a href={item.url} className={styles.link}>
-              {item.domain}
-            </a>
-          </List.Item>
-        )}
-      />
+              <a href={item.url} className={styles.link}>
+                {item.domain}
+              </a>
+            </List.Item>
+          )}
+        />
+        <StoriesPage />
+      </div>
     );
   }
 }

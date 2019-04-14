@@ -1,4 +1,4 @@
-import { Story } from "../../../models";
+import { Comment } from "../../../models";
 
 export enum StoriesTypes {
   LOAD_REQUEST = "@stories/LOAD_REQUEST",
@@ -7,7 +7,7 @@ export enum StoriesTypes {
 }
 
 export interface StoryState {
-  readonly data?: Story;
+  readonly data?: Comment[];
   readonly loading: boolean;
   readonly error: boolean;
 }

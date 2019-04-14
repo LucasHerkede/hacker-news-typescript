@@ -4,5 +4,5 @@ export interface Comment {
   user: string;
   time_ago: string;
   content: string;
-  comments: Comment[];
+  comments?: Comment[];
 }

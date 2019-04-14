@@ -10,9 +10,9 @@ const INITIAL_STATE: StoryState = {
 const reducer: Reducer<StoryState> = (state = INITIAL_STATE, action) => {
   switch (action.type) {
     case StoriesTypes.LOAD_REQUEST:
-      return { ...state, loading: true };
+      return { ...state, loading: true, data: undefined };
     case StoriesTypes.LOAD_SUCCESS:
-      return { ...state, loading: false, error: false, data: action.payload };
+      return { ...state, loading: false, error: false, data: action.payload.data };
     case StoriesTypes.lOAD_FAILURE:
       return { ...state, error: true };
     default:
