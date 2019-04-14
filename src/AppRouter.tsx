@@ -2,7 +2,7 @@
 import React from 'react';
 import { Switch, Route } from "react-router-dom";
 import StoryList from "./components/StoryList";
-import StoryItem, { StoryItemProps } from './components/StoryItem';
+import StoryItem from './components/StoryItem';
 
 const AppRouter = () => (
   <Switch>

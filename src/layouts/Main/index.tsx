@@ -14,7 +14,7 @@ class Main extends PureComponent {
           <Header>
             <MenuHeader />
           </Header>
-          <Content>
+          <Content style={{backgroundColor: 'white'}}>
             <BrowserRouter>
               <AppRouter />
             </BrowserRouter>

@@ -3,11 +3,11 @@ import { createStore, applyMiddleware, Store } from "redux";
 import rootReducer from "./ducks/rootReducer";
 import rootSaga from "./ducks/rootSaga";
 import { FilteredStoryState } from "./ducks/filteredStories/types";
-import { StoryState } from "./ducks/stories/types";
+import { CommentState } from "./ducks/comments/types";
 
 export interface AppState {
   filteredStories: FilteredStoryState;
-  stories: StoryState;
+  comments: CommentState;
 }
 
 const sagaMiddleware = createSagaMiddleware();

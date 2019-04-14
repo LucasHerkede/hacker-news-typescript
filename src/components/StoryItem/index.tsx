@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import * as Models from "../../models";
-import { Comment } from "antd";
 import Paragraph from "antd/lib/typography/Paragraph";
 import { RouteComponentProps } from "react-router";
 import { AppState } from "../../store";
 import { Dispatch, bindActionCreators } from "redux";
 import { connect } from "react-redux";
 
-import * as StoryActions from "../../store/ducks/stories/actions";
+import * as StoryActions from "../../store/ducks/comments/actions";
 import Typography from "antd/lib/typography/Typography";
 import Title from "antd/lib/typography/Title";
 import CommentList from "../CommentList";
@@ -42,7 +41,7 @@ class StoryItem extends Component<Props> {
     if (!item) return <Paragraph> Opps! </Paragraph>;
     return (
       <div>
-        <Typography style={{padding: '10px'}}>
+        <Typography style={{ padding: "10px" }}>
           <Title level={3}>{item.title}</Title>
           <Paragraph>
             posted at {item.time_ago} with {item.comments_count} comments
@@ -56,10 +55,10 @@ class StoryItem extends Component<Props> {
 
 const mapStateToProps = (state: AppState) => ({
   stories: state.filteredStories.data,
-  comments: state.stories.data
+  comments: state.comments.data
 });
 
-const mapDispatchToProps = (dispatch: Dispatch) => 
+const mapDispatchToProps = (dispatch: Dispatch) =>
   bindActionCreators(StoryActions, dispatch);
 
 export default connect(

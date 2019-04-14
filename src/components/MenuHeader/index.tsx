@@ -1,15 +1,9 @@
 import React, { memo } from "react";
-import { Menu } from "antd";
 
 const MenuHeader = () => (
-  <Menu
-    theme="dark"
-    mode="horizontal"
-    defaultSelectedKeys={["1"]}
-    style={{ lineHeight: "64px" }}
-  >
-    <Menu.Item key="1">Home</Menu.Item>
-  </Menu>
+  <div>
+    <h2 style={{ color: 'white'}}>Hacker News</h2>
+  </div>
 );
 
 export default memo(MenuHeader);

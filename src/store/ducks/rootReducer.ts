@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import filteredStories from "./filteredStories";
-import stories from './stories';
+import comments from './comments';
 export default combineReducers({
   filteredStories,
-  stories
+  comments
 });
